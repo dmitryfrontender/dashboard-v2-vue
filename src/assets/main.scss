@@ -1,0 +1,53 @@
+@import 'primeicons/primeicons.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-base {
+    @tailwind base;
+}
+
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
+}
+
+body, html, #app {
+    height: 100%;
+    overflow: hidden;
+}
+
+:root {
+    --route-transition-duration: 0.2s;
+}
+
+.slide-right {
+    &-leave-active,
+    &-enter-active {
+        transition: var(--route-transition-duration);
+    }
+
+    &-enter {
+        transform: translate(100%, 0);
+    }
+    &-leave-to {
+        transform: translate(-100%, 0);
+    }
+}
+
+.slide-left {
+    &-leave-active,
+    &-enter-active {
+        transition: var(--route-transition-duration);
+    }
+
+    &-enter {
+        transform: translate(-100%, 0);
+    }
+    &-leave-to {
+        transform: translate(100%, 0);
+    }
+}

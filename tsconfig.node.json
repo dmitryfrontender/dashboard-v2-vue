@@ -1,0 +1,21 @@
+{
+  "extends": "@tsconfig/node21/tsconfig.json",
+  "include": [
+    "vite.config.*",
+    "vitest.config.*",
+    "tailwind.config.*",
+    "postcss.config.*",
+    "cypress.config.*",
+    "nightwatch.conf.*",
+    "playwright.config.*",
+    "tsconfig.*",
+    ".eslintrc.*",
+    "backend/**/*",
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["node"]
+  }
+}
