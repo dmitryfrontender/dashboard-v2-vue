@@ -5,7 +5,6 @@ import SlideTitle from '@/components/SlideTitle.vue';
 
 import UsersActions from '@/components/users/UsersActions.vue';
 import UsersTable from '@/components/users/UsersTable.vue';
-
 </script>
 
 <template>
@@ -21,6 +20,3 @@ import UsersTable from '@/components/users/UsersTable.vue';
     </div>
   </SlideContainer>
 </template>
-<style>
-
-</style>

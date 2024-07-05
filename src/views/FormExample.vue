@@ -15,13 +15,16 @@ const formValues = reactive({
     email: ''
   }
 });
-const form = useVuelidate({
-  firstName: { required },
-  lastName: { required },
-  contact: {
-    email: { required, email }
-  }
-}, formValues);
+const form = useVuelidate(
+  {
+    firstName: { required },
+    lastName: { required },
+    contact: {
+      email: { required, email }
+    }
+  },
+  formValues
+);
 </script>
 
 <template>
@@ -32,7 +35,7 @@ const form = useVuelidate({
     <div class="flex flex-col gap-10 w-full h-full px-10 justify-center">
       <SlideTitle>Form Example</SlideTitle>
       <div class="flex gap-8 w-full justify-around flex-col items-center lg:flex-row text-1xl">
-        <div class=" w-72">
+        <div class="w-72">
           {<br />
           &nbsp;&nbsp;firstName: <CustomInput v-model="form.firstName.$model" />,<br />
           &nbsp;&nbsp;lastName:<CustomInput v-model="form.lastName.$model" />,<br />
@@ -63,7 +66,3 @@ const form = useVuelidate({
     </div>
   </SlideContainer>
 </template>
-
-<style scoped>
-
-</style>

@@ -80,16 +80,13 @@ const options = {
 onBeforeUnmount(() => {
   socket.close();
 });
-
 </script>
 
 <template>
   <SlideContainer :prev-link="routes.virtualizationExample">
     <div class="w-full max-w-[100vh] h-full p-10 flex flex-col gap-10">
       <SlideTitle>Realtime Graph</SlideTitle>
-      <form
-        class="flex gap-1"
-      >
+      <form class="flex gap-1">
         <InputNumber
           v-model="reportValue"
           @keydown.enter="onAddReport"
@@ -104,6 +101,3 @@ onBeforeUnmount(() => {
     </div>
   </SlideContainer>
 </template>
-<style>
-
-</style>

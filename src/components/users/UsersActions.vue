@@ -10,19 +10,24 @@ const userStore = useUserStore();
 const { users } = storeToRefs(userStore);
 
 const onAddUser = async () => {
-  const realUser = await userStore.createUser(generateUser(true));
-  toast.add({
-    severity: 'success',
-    summary: 'User Added',
-    detail: `${realUser.firstName} ${realUser.lastName}`,
-    life: 3000
-  });
+  try {
+    const realUser = await userStore.createUser(generateUser(true));
+
+    toast.add({
+      severity: 'success',
+      summary: 'User Added',
+      detail: `${realUser.firstName} ${realUser.lastName}`,
+      life: 3000
+    });
+  } catch (error) {
+    // ignore throttle error
+  }
 };
 </script>
 
 <template>
   <div class="flex gap-4 items-center justify-end">
-    {{ users.length }} users
+    <span v-if="users?.length">{{ users.length === 1 ? 'user' : 'users' }}</span>
     <Button
       icon="pi pi-plus"
       label="Add User"
@@ -32,7 +37,3 @@ const onAddUser = async () => {
     />
   </div>
 </template>
-
-<style scoped>
-
-</style>
